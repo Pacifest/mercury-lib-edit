@@ -430,12 +430,13 @@ function Library:create(options)
 			writefile("MercurySettings.json", HTTPService:JSONEncode(settings))
 		end
 	end
-
+	
 	options = self:set_defaults({
 		Name = "Mercury",
 		Size = UDim2.fromOffset(600, 400),
 		Theme = self.Themes[settings.Theme],
-		Link = "https://github.com/deeeity/mercury-lib"
+		Link = "https://github.com/deeeity/mercury-lib",
+		UiIcon = "rbxassetid://8569322835"
 	}, options)
 
 	if getgenv and getgenv().MercuryUI then
@@ -689,7 +690,7 @@ function Library:create(options)
 		BackgroundTransparency = 1,
 		Position = UDim2.new(0, 5, 0.5, 0),
 		Size = UDim2.new(0, 15, 0, 15),
-		Image = "http://www.roblox.com/asset/?id=8569322835",
+		Image = options.UiIcon,
 		Theme = {ImageColor3 = "StrongText"}
 	})
 
